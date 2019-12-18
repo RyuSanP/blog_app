@@ -1,11 +1,15 @@
-<h1>Articles#show</h1>
+<h1>記事詳細</h1>
 
 <%= @article.title %><br>
 <%= @article.content %><br>
 <% if user_signed_in? %>
   <% if @article.user_id == current_user.id %>
-    <%= link_to "編集", edit_article_path(@article) %>
-    <%= link_to "削除", article_path(@article), method: :delete, data: {confirm: "削除していいですか"} %>
+    <div class="btn">
+      <%= link_to "編集", edit_article_path(@article) %>
+    </div>
+    <div class="btn">
+      <%= link_to "削除", article_path(@article), method: :delete, data: {confirm: "削除していいですか"} %>
+    </div>
   <% end %>
 <% end %>
 <%= link_to "一覧へ", articles_path %>
