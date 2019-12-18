@@ -5,8 +5,10 @@
   <%= article.content %><br>
   <%= article.created_at %><br>
   <% if user_signed_in? %>
-    <%= link_to "編集", edit_article_path(article) %>
-    <%= link_to "削除", article_path(article), method: :delete, data: {confirm: "削除していいですか"} %>
+    <% if article.user_id == current_user.id %>
+      <%= link_to "編集", edit_article_path(article) %>
+      <%= link_to "削除", article_path(article), method: :delete, data: {confirm: "削除していいですか"} %>
+    <% end %>
   <% end %>
   <hr>
 <% end %>
