@@ -10,19 +10,25 @@
   </head>
 
   <body>
-    <header>
-
+    <div class="navbar navbar-light bg-light">
+      <%= link_to_unless_current "ブログ", articles_path %>
       <% if user_signed_in? %>
         <%= current_user.email %>さん
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to "ログイン", new_user_session_path%>
       <% end %>
-    </header>
+    </div>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="box1 col-12">
+        <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
