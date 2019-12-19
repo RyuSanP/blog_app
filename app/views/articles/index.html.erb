@@ -1,4 +1,4 @@
-<h1>記事一覧</h1>
+<h1>みんなの記事</h1>
 <%= link_to "新規記事作成", new_article_path, class: "btn btn-primary" %><br><hr>
 
 <div class="row">
@@ -6,12 +6,13 @@
 <% @articles.each do |article| %>
 <div class="box2 col-lg-3 col-md-6 mb-2 p-4">
   <%= link_to article.title, article_path(article) %><br>
-  <%= article.content.truncate(60) %><br>
-  <%= article.created_at %><br>
+  <%= article.content.truncate(70) %><br>
+  <div class="pt-2">作成日時：<%= article.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+  <div>更新日時：<%= article.updated_at.strftime('%Y/%m/%d %H:%M') %></div>
   <% if user_signed_in? %>
     <% if article.user_id == current_user.id %>
-      <%= link_to "編集", edit_article_path(article), class: "btn btn-success" %>
-      <%= link_to "削除", article_path(article), method: :delete, data: {confirm: "削除していいですか"}, class: "btn btn-danger" %>
+      <%= link_to "編集", edit_article_path(article), class: "btn btn-success ml-4" %>
+      <%= link_to "削除", article_path(article), method: :delete, data: {confirm: "削除していいですか"}, class: "btn btn-danger ml-5" %>
     <% end %>
   <% end %>
 </div>
