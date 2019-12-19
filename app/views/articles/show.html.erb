@@ -1,7 +1,7 @@
 <h1>記事詳細</h1>
 <%= link_to "一覧へ", articles_path %><br>
 
-<%= @article.title %><br>
+<h2><%= @article.title %></h2><br>
 <%= simple_format(h @article.content) %>
 <% if user_signed_in? %>
   <% if @article.user_id == current_user.id %>
