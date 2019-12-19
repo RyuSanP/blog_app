@@ -1,7 +1,7 @@
 <h1>記事詳細</h1>
 
 <%= @article.title %><br>
-<%= @article.content %><br>
+<%= simple_format(h @article.content) %><br>
 <% if user_signed_in? %>
   <% if @article.user_id == current_user.id %>
     <div class="btn">
