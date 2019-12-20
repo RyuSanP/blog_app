@@ -11,12 +11,15 @@
 
   <body>
     <div class="navbar" style="background-color:#e3f2fd;">
-      <%= link_to_unless_current "BlogPost", articles_path %>
-      <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "ログイン", new_user_session_path %>
-      <% end %>
+      <div class="container">
+        <%= link_to "気づき", root_path %>
+        <%= link_to "一覧へ", articles_path %><br>
+        <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item" %>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path, class: "nav-item" %>
+        <% end %>
+      </div>
     </div>
     <div class="container">
       <p class="notice"><%= notice %></p>
