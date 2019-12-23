@@ -15,14 +15,26 @@
  */
 
 
-.box1 {
-  background-color: white;
-}
+ .home {
+   background-color: rgb(181, 255, 164);
+   height: 1000px;
+ }
 
-.box2 {
-  background-color: bisque;
-}
+ .side {
+   background-color: rgb(255, 215, 128);
+   height: 500px;
+   border-radius: 40px;
+   border: solid;
+ }
 
-header {
-  height: 40px;
-}
+ .box1 {
+   background-color: white;
+ }
+
+ .box2 {
+   background-color: bisque;
+ }
+
+ header {
+   height: 40px;
+ }
