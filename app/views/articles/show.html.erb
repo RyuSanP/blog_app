@@ -2,7 +2,7 @@
 <%= link_to "一覧へ", articles_path %><br>
 
 <div class="row">
-  <div class="home col-lg-9 col-md-8  ">
+  <div class="home col-lg-9 col-md-8 p-4">
     <h2><%= @article.title %></h2>
     <%= simple_format(h @article.content) %>
     <% if user_signed_in? %>
@@ -13,7 +13,7 @@
     <% end %>
   </div>
 
-  <div class="side col-lg-3 col-md-4 col-sm-10 col-8">
+  <div class="side col-lg-3 col-md-4 col-sm-12 col-12">
     aaa
   </div>
 </div>
