@@ -1,0 +1,4 @@
+<p><span>email: </span><%= @user.email %></p>
+<% @articles.each do |article| %>
+  <p><span>投稿した記事: </span><%= link_to article.content, article_path(article.id) %></p>
+<% end %>
