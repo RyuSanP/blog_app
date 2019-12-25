@@ -2,3 +2,6 @@
 <% @articles.each do |article| %>
   <p><span>投稿した記事: </span><%= link_to article.content, article_path(article.id) %></p>
 <% end %>
+<% @favorite_articles.each do |article| %>
+  <p><span>ファボツイート内容: </span><%=link_to article.content, article_path(article.id) %></p>
+<% end %>
